@@ -1,0 +1,30 @@
+{
+    "name": "@repo/rb-chat",
+    "version": "0.0.1",
+    "description": "",
+    "type": "module",
+    "scripts": {
+        "tc": "tsc --noEmit",
+        "tc:watch": "tsc --noEmit --watch",
+        "prebuild": "rm -rf dist",
+        "build": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "main": "./dist/index.js",
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "keywords": [],
+    "author": "André Thomas",
+    "license": "ISC",
+    "dependencies": {
+        "@dre44/react-base": "workspace:^",
+        "@dre44/util": "^0.7.6",
+        "clsx": "^2.1.1",
+        "flowbite-react": "^0.12.10",
+        "react": "^19.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.2"
+    }
+}
