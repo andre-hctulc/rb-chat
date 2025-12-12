@@ -24,6 +24,10 @@ interface ChatProps
         FooterPropagateProps {
     className?: string;
     style?: CSSProperties;
+    /**
+     * @default true
+     */
+    fullHeight?: boolean;
 }
 
 export const Chat: FC<ChatProps> = ({
@@ -38,9 +42,10 @@ export const Chat: FC<ChatProps> = ({
     messages,
     sendAction,
     messageComponents,
+    fullHeight,
 }) => {
     return (
-        <div className={clsx("flex flex-col gap-2 min-h-0", className)}>
+        <div className={clsx("flex flex-col gap-2 min-h-0", fullHeight !== false && "h-full", className)}>
             <ChatContextProvider messages={messages}>
                 <ChatHeader className="" title={title} headerText={headerText} />
                 <ChatBody

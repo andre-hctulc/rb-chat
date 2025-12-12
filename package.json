@@ -19,8 +19,7 @@
     "license": "ISC",
     "dependencies": {
         "@dre44/react-base": "workspace:^",
-        "@dre44/util": "^0.7.6",
-        "clsx": "^2.1.1",
+        "@dre44/util": "^0.7.7",
         "flowbite-react": "^0.12.10",
         "react": "^19.2.0"
     },
