@@ -1,11 +1,11 @@
 "use client";
 
-import clsx from "clsx";
 import { type FC, useEffect, useRef } from "react";
 import { useChatContext } from "./chat-context.js";
 import { ChatMessage, type MessageComponent } from "./chat-message.js";
 import { Placeholder } from "@dre44/react-base";
 import { Button, Spinner } from "flowbite-react";
+import { twMerge } from "flowbite-react/helpers/tailwind-merge";
 
 interface ChatBodyProps {
     className?: string;
@@ -40,7 +40,7 @@ export const ChatBody: FC<ChatBodyProps> = ({
     return (
         <div
             ref={root}
-            className={clsx("RB_ChatBody flex flex-col grow p-4 gap-4 min-h-0 overflow-y-auto", className)}
+            className={twMerge("RB_ChatBody flex flex-col grow p-4 gap-4 min-h-0 overflow-y-auto", className)}
         >
             {loading && (
                 <Placeholder grow>
@@ -58,7 +58,7 @@ export const ChatBody: FC<ChatBodyProps> = ({
                 {!loading &&
                     messages.map((message) => {
                         return (
-                            <li key={message.id} className={clsx("flex flex-col")}>
+                            <li key={message.id} className={twMerge("flex flex-col")}>
                                 <ChatMessage render={messageComponents} message={message} />
                             </li>
                         );
